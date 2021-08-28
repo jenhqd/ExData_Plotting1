@@ -1,0 +1,6 @@
+R files 'plot1.R', 'plot2.R', 'plot3.R', 'plot4.R' contain the code to download the dataset as txt,
+processing the data, and  generate the corresponding plots as png files.
+
+plot1.R provides two methods to achieve the data for plotting:
+1) Reading the whole data set then subsetting
+2) Reading only rows that satisfy the conditions (only two required days) using readr packages
