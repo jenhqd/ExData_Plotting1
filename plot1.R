@@ -14,6 +14,7 @@ if(memory_required < 8){
 } else {
    print('Alert: Data set is too large!!')
 }
+file.remove('household_power_consumption.txt')
 #formatting the column to proper classes
 source_data[ ,3:9] <- source_data %>% select( ,3:9) %>% mutate_if(is.character, as.numeric)
 source_data$Date <- as_date(source_data$Date, format = '%d/%m/%Y')

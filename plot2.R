@@ -11,6 +11,7 @@ library(readr)
 f <- function(x, pos) {filter(x, Date %in% c('1/2/2007', '2/2/2007'))}
 sub_data <- read_delim_chunked(file = 'household_power_consumption.txt', DataFrameCallback$new(f), delim = ';',
                                chunk_size = 1000)
+file.remove('household_power_consumption.txt')
 sub_data$Date <- as_date(dmy(sub_data$Date))
 datetime <- with(sub_data, ymd(Date)+hms(Time))
 #plotting
